@@ -1,0 +1,439 @@
+/* Remover as margens internas e externas de todos elementos(tags) html.
+para isso usamos o comando margin(Externa) com o valor 0 e o comando
+padding(interna) tbm com valor 0 além disso utlizimos o comando box-sizing
+com o valor border-box. Isso permite que as margens internas aplicas nao 
+interfiram no tamanho da caixa em que o elemento está */
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0; /*Margem externa dos elementos*/
+    padding: 0; /*Margem interna dos elementos*/
+    box-sizing: border-box;
+}
+
+header{
+    /* Vamos aumentar a altura do header para 600px */
+    height: 500px;
+    /* Usamos o comando background-img para adicionar uma imagem de fundo ao header. 
+    Utilizamos o comando ../ para voltar ao nivel anterior e assim acessar a pasta img
+    que esta fora da pasta css */
+    background-image:url("../img/shawnanggg-nmpW_WwwVSc-unsplash.jpg");
+    /* Ajustar o tamanho da foto para 100% de largura */
+    
+    background-size: 100%; 
+    /* Para realizar o deslocamento da img de fundo utilizaremos o comando backgroud-positivo
+    assim você pode deslocar nos eixos x e y */
+
+    background-position: 0 -500px;
+    
+}
+
+
+#cabecalho{
+    /* Aplicar uma cor de fundo preto com um efeito de transparência
+    o comando sera background-color com valor rgba, onde "a" é o efeito
+    de transparência que varia entre 0 e 1, onde 0 é totalmente translucido
+    e 1 totalmente escuro */
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 500px;
+    color:#fff;
+
+}
+
+#superior{
+    /* O comando display permite dispor os elementos de algumas maneiras, uma delas
+    é flex, de flexivel. Isso permite que o conteudo deste elemento fique flexivel */
+    display: flex;
+    /* Para esse exemplo foi em aplicado uma estrura flexivel em linha. Portanto o comando flex direction
+    recebeu o valor row(linha) */
+    flex-direction: row;
+    /* O comando flex-wrap realiza um quebra de linha */
+    flex-wrap: wrap; 
+
+}
+h1{
+    flex:1;
+    text-align: center;/* Alinhar titulo */
+    padding-top: 25px;/* Baixar o titulo em x Pixels */
+    font-family: 'Times New Roman';
+    font-size: 40pt;
+    font-weight:bolder;
+    font-style: italic;
+}
+#superior nav{
+    flex: 2;
+    text-align: center;
+    padding-top: 45px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15pt;
+    
+
+}
+
+/* Vamos retirar o marcador da lista ul. Está lista esta na parte superior da pág,
+dentro do id superior, o caminho que iremos fazer é #superior nav ul */
+
+#superior nav ul {
+    /* Usaremos o comando list-style como none(nenhum) para retirar o marcador */
+    list-style: none;
+}
+    /* Para dispor(display) os itens do menu em linha, utilizaremos o comando display
+    em line com o valor inline-block */
+
+#superior nav ul li{
+     display: inline-block;
+     padding: 0px 25px;
+     transition: ease 1ms;
+
+     
+}
+
+    /* Foi aplicado ao item li um atributo hover, que é ativado quando o usuario
+    passa o ponteiro sobre o item */
+#superior nav ul li:hover{
+    transform: scale(1.1);
+}
+
+#superior nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    /* Comando text-transform muda o formato da letra, maisculo, minusculo ou a primeira letra da palavra maiscula 
+    Tudo Maisculo - uppercase
+    Tudo Minisculo - lowercase
+    Primeira Maiscula - capitalize*/
+}
+
+
+#superior #whatsapp {
+    flex: 1;
+    list-style: none;
+    text-align: center;  /* Alinhar titulo */
+    padding-top: 45px;/* Baixar o titulo em x Pixels */
+    font-family: 'Times New Roman';
+    font-size: 15pt;
+}
+
+#superior #whatsapp li{
+    transition: ease 1ms;
+ }
+
+
+#superior #whatsapp li:hover{
+    transform: scale(1.1);
+ }
+
+#superior #whatsapp a{
+   color: #fff;
+   text-decoration: none;
+   transition: ease 1ms;
+   font-size: 15pt;
+}
+
+
+
+#cabecalho h2{
+    text-align: center;
+    padding-top: 100px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60pt;
+    /* Vamos aplicar um espaçamento entre as letras. O comando é letter-spacin, voce pode aplicar valores
+    positivos ou negativos, sendo assim, alterando o espaçamento. */
+    letter-spacing: -3px;
+    font-weight:lighter;
+    font-style: italic;
+    transition: ease 1ms;
+}
+#cabecalho h2:hover{
+    transform: scale(1.1);
+}
+
+#cabecalho p{
+    width: 70%;
+    margin: 0px auto;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#cabecalho p:hover{
+    transform: scale(1.1);
+}
+
+body{
+    background-color: white;
+}
+
+/* ========================  estilos do footer ======================= */
+footer{
+    background-color:#424242;
+    /* Vamos deixar o conteúdo do footer flexível com o comando
+    display(dispor|exibir) com o valor flex e aplicar a direção 
+    como row(linha) para o comando flex-direction */
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    /* height: 250px; */
+    padding-top:80px;
+    padding-bottom: 80px;
+}
+
+footer #endereco{
+    flex:1;
+    color:#fff;
+    font-family: "arial";
+    font-size:12pt;
+    /* text-align: right; */
+}
+footer #redessociais{
+    flex:1;
+}
+footer #redessociais nav{
+    text-align: right;
+}
+footer #redessociais nav ul{
+    /* para retirar o marcador, usareremos
+    o comando list-style com o valor none */
+    list-style: none;
+}
+/*para dispor os itens de link das redes,
+usaremos o comando display com o valor 
+inline-block*/
+footer #redessociais nav ul li{
+    display: inline-block;
+    margin-left: 10px;
+}
+footer #redessociais nav ul li a img{
+    width: 50px;
+    height: 50px;
+}
+
+/* ============== estios para a página home ============ */
+main h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:50pt;
+    margin:30px;
+    letter-spacing: -3px;
+    font-weight:lighter;
+    font-style: italic;
+    text-align: center;
+
+}
+
+main p{
+    margin:0px 200px;
+    text-align: justify;
+    line-height: 25px;
+    font-family: "Archivo";
+    margin-bottom: 30px;
+
+}
+main #imghome{
+    text-align: center;
+}
+main #imghome img{
+    width:200px;
+    height: 200px;
+    /* Vamos arredondar os cantos da imagem com 
+    comando border-radius. O valor, você aplicar em
+    pixel ou percentual. */
+    border-radius: 50%;
+    margin:10px;
+    /* Para deixar as imagens opacas ou transparentes você pode usar 
+    o comando opacity com o valor variando entre 0 e 1. Onde 0(zero)
+    totalmente transparente e 1 totalmente visível */
+    opacity: 0.8;
+    /*
+    Vamos aplicar um efeito de animação com comando transition com 
+    meio segundo.
+    */
+    transition:ease 0.5s
+}
+main #imghome img:hover{
+    opacity: 1;
+    /*Ao passar do mouse sobre a imagem será aplicada a sombra com as 
+    seguintes configurações:para o primeiro valor será 0(zero) esta 
+    posição representa x(horizontal; a segunda posição será 0px que 
+    representa o y(vertical); a terceira posição é o efeito de 
+    enevoado que será 20 e por último a cor da sombra;*/
+    box-shadow: 0px 0px 20px black;
+}
+
+main #categoria{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin-top:-30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main #categoria img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* opacity: 0.8;
+    /*
+    Vamos aplicar um efeito de animação com comando transition com 
+    meio segundo.
+    */
+    /* transition:ease 0.5s; */
+    /*Ao passar do mouse sobre a imagem será aplicada a sombra com as 
+    seguintes configurações:para o primeiro valor será 0(zero) esta 
+    posição representa x(horizontal; a segunda posição será 0px que 
+    representa o y(vertical); a terceira posição é o efeito de 
+    enevoado que será 20 e por último a cor da sombra;*/ 
+    box-shadow: 0px 0px 10px black;
+    transition:ease 0.5s
+}
+main #categoria img:hover{
+    transform: scale(1.03);
+
+}
+
+main #categoria div{
+    text-align: center;
+    flex: 1;
+} 
+
+main #categoria div h3{
+    font-family: "Gloria Hallelujah";
+    margin: 5px;
+    font-size: 20pt;
+    text-transform: uppercase;
+}
+
+main section{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main #item1,#item2,#item3,#item4,#item5,#item6{
+    display: flex;
+    flex-direction: row;
+    width: 32%;
+    margin: 10px;
+
+}
+
+main #item1 img, #item2 img,#item3 img,#item4 img,#item5 img,#item6 img{
+    width: 200px;
+    height: 250px;
+    border-radius: 15px;
+    margin: 5px;
+}
+main section div p{
+    font-family: "Times New Roman";
+    font-style: italic;
+    text-align: left;
+    margin: 0px;
+}
+main section div h3{
+    font-family: "Gloria Hallelujah";
+    font-weight: bold;
+    font-size: 16pt;
+}
+main h4{
+    margin: 5px auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 30pt;
+    text-align: center;
+    font-weight: lighter;
+    font-style: italic;
+    letter-spacing: -3px;
+}
+   
+div #TI h2{
+    text-align: center;
+    padding-top: 150px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60pt;
+    /* Vamos aplicar um espaçamento entre as letras. O comando é letter-spacin, voce pode aplicar valores
+    positivos ou negativos, sendo assim, alterando o espaçamento. */
+    letter-spacing: -5px;
+    font-weight:lighter;
+    font-style: italic;
+    text-shadow: 2px 2px 5px black;
+}
+
+main #categoria a{
+    text-decoration: none;
+    color: black;
+
+}
+
+main #mapa iframe{
+    width: 100%;
+    height: 400px;
+}
+
+/* -------------------------------- Formatação do Formulário ------------------------------- */
+
+main form{
+    width: 50%;
+    padding: 10px;
+    margin: 20px auto;
+    border: 1px solid;
+    box-shadow: 0px 0px 10px black;
+}
+
+main form input[type=text],
+main form input[type=tel],
+main form input[type=email]{
+    width: 95%;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 80px;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+main form select{
+    width: 50%;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 80px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 0px;
+    border-bottom: 1px solid black;
+    /* Display block = Ocupa um bloco de area inteiro */
+    display: block; 
+    font-family: 'Times New Roman', Times, serif;
+}
+
+main form textarea{
+    width: 95%;
+    height: 200px;
+    box-shadow: 0px 0px 5px black;
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    display: block;
+}
+
+main form span{
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+main form input[type=submit]{
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    display: block;
+    margin: 20px auto;
+    border: 0px;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    transition: ease 0.5s;
+}
+main form input[type=submit]:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
